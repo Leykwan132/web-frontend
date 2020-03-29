@@ -25,7 +25,9 @@ class Register extends React.Component {
   };
 
   onSubmitRegister(e) {
+    // prevent default is to prevent the page reload
     e.preventDefault();
+
     // fetch("https://fast-stream-45193.herokuapp.com/register", {
     //   method: "post",
     //   headers: { "Content-Type": "application/json" },
@@ -54,7 +56,11 @@ class Register extends React.Component {
         name: this.state.name
       })
       .then(res => {
+        /* res will return {id: something, name: something, etc...} */
+
+        // passing in object back to loadUser
         this.props.loadUser(res.data);
+        // redirect
         this.props.onRouteChange("home");
       })
       .catch(err => {

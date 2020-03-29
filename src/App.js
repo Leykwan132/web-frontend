@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   loadUser = data => {
-    console.log(data);
+    // passing in object {id: somemthing, name: something, etc...}
     this.setState({
       user: {
         id: data.id,
